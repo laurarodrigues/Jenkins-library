@@ -1,3 +1,5 @@
+import java.io.InputStream;
+
 public class ApplicationFiles{
 
     private Properties properties = new Properties();
