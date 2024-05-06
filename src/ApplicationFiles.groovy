@@ -5,7 +5,7 @@ public class ApplicationFiles{
     private String applicationDeploy;
     private String databaseDeploy;
 
-    public StartApplication(String applicationProperties){
+    public ApplicationFiles(String applicationProperties){
         this.reader  = new FileReader(applicationProperties);
     }
 
