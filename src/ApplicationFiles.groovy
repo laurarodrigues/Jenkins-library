@@ -2,12 +2,12 @@ public class ApplicationFiles{
 
     private Properties properties = new Properties();
     private FileReader reader
+    private InputStrean in;
     private String applicationDeploy;
     private String databaseDeploy;
 
-    public ApplicationFiles(String applicationProperties){
-        //this.reader  = new FileReader(applicationProperties);
-         InputStream in = this.getClass().getClassLoader().getResourceAsStream("application.properties");
+    public ApplicationFiles(){
+         this.in = this.getClass().getClassLoader().getResourceAsStream("application.properties");
     }
 
     public String getApplicationDeploy(){
