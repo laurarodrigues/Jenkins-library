@@ -1,7 +1,7 @@
 public class ApplicationFiles{
 
     private Properties properties = new Properties();
-    private FileReader reader
+    private FileReader reader;
     private InputStrean in;
     private String applicationDeploy;
     private String databaseDeploy;
