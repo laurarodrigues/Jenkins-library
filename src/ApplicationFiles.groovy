@@ -6,16 +6,17 @@ public class ApplicationFiles{
     private String databaseDeploy;
 
     public ApplicationFiles(String applicationProperties){
-        this.reader  = new FileReader(applicationProperties);
+        //this.reader  = new FileReader(applicationProperties);
+         InputStream in = this.getClass().getClassLoader().getResourceAsStream("application.properties");
     }
 
     public String getApplicationDeploy(){
-        properties.load(reader);
+        properties.load(in);
         return properties.getProperty("deployment.application"); 
     }
 
     public String getDataBaseDeploy(){
-        properties.load(reader);
+        properties.load(in);
         return properties.getProperty("deployment.database"); 
     }
 }
