@@ -2,7 +2,7 @@
 
 public class ApplicationFiles{
 
-    String propertiesFile
+    private String propertiesFile;
 
 
     public ApplicationFiles(String propertiesFile){
@@ -12,16 +12,23 @@ public class ApplicationFiles{
     public String getProperty(String property){
        
         String deployFile;
-        Scanner scanner = new Scanner(propertiesFile);
-        while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                if(lines.contains(property)){
-                        String[] parts = lines.split("=");
-                        deployFile = parts[1];
+        BufferedReader reader;
+
+        try{
+            reader = new BufferedReader(new FileReader(propertiesFile));
+            String line =reader.readLine();
+
+            while(line != null){
+                if(line.contains(property)){
+                    String[] result = line.split("=");
+                    deployFile = result[1];
                 }
-                // process the line
+            }
+
+
+        }catch(IOException e){
+            e.printStrackTrace();
         }
-        scanner.close();
 
         return deployFile;
     }
