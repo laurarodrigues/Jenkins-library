@@ -12,37 +12,17 @@ public class ApplicationFiles{
     public String property(String property){
        
         String deployFile;
-        BufferedReader reader;
-        System.out.println("Test");
-         System.out.println(propertiesFile);
-
-        try{
-            reader = new BufferedReader(new FileReader(propertiesFile));
-            System.out.println("Test");
-            String line =reader.readLine();
-            boolean durchlaufen = false;
-
-            while(line != null){
-                System.out.println("Test" + line);
-                if(line.contains(property)){
-                    String[] result = line.split("=");
-                     durchlaufen = true;
-                    deployFile = result[1];
-                }
-                line = reader.readLine();
+        Scanner sc = new Scanner(propertiesFile);
+        while(sc.hasNext()){
+            if(sc.next().contains(property)){
+                deployFile = sc.next();
             }
-
-
-        }catch(IOException e){
-            e.printStackTrace();
         }
+        return deployFile;
 
-        if(durchlaufen){
-            return "true";
-        }else{
-                return "false";
-                
-        }
+        
+
+        
 
     }
 
