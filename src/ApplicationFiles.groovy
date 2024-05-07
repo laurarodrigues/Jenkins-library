@@ -2,13 +2,15 @@
 
 public class ApplicationFiles{
 
-    def propertiesFile = libraryResource "application.properties"
+    String propertiesFile
 
 
-    public ApplicationFiles(){
+    public ApplicationFiles(String propertiesFile){
+        this.propertiesFile = propertiesFile;
     }
 
     public String getProperty(String property){
+       
         String deployFile;
         Scanner scanner = new Scanner(propertiesFile);
         while (scanner.hasNextLine()) {
