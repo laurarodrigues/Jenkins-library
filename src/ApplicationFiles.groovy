@@ -3,8 +3,8 @@ def propertiesFile = libraryResource "application.properties"
 public class ApplicationFiles{
 
 
-    public ApplicationFiles(){
-    }
+    //public ApplicationFiles(){
+    //}
 
     public String getProperty(String property){
         String deployFile;
