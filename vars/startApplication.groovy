@@ -1,8 +1,8 @@
 def call(String databasePod){
-    ApplicationFiles applicationFile = new ApplicationFiles();
-    String deployFileApp = applicationFile.getProperty("deployment.database");
+    ApplicationFiles appFile = new ApplicationFiles();
+    String deployFileApp = appFile.getProperty("deployment.database");
     applyDeployment(deployFileApp)
     rolloutPod("postgres")
-    String deployFileDB = applicationFile.getProperty("deployment.application");
+    String deployFileDB = appFile.getProperty("deployment.application");
     applyDeployment(deployFileDB)
 }
