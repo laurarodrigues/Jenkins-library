@@ -20,11 +20,13 @@ public class ApplicationFiles{
             reader = new BufferedReader(new FileReader(propertiesFile));
             System.out.println("Test");
             String line =reader.readLine();
+            boolean durchlaufen = false;
 
             while(line != null){
                 System.out.println("Test" + line);
                 if(line.contains(property)){
                     String[] result = line.split("=");
+                     durchlaufen = true;
                     deployFile = result[1];
                 }
                 line = reader.readLine();
@@ -35,7 +37,13 @@ public class ApplicationFiles{
             e.printStackTrace();
         }
 
-        return deployFile;
+        if(durchlaufen){
+            return "true";
+        }else{
+                return "false";
+                
+        }
+
     }
 
     
