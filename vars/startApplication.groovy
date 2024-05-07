@@ -6,10 +6,10 @@ def call(String databasePod){
     sh "echo Klasse ApplicationFile wird instanziert"
     def appFile = new ApplicationFiles(propertiesFile);
     sh "echo Deployment-Datei für DB wird gesucht"
-    String deployFileApp = appFile.property("deployment.database");
+    String deployFileApp = appFile.property("database");
     sh "echo gefunden ${deployFileApp}"
     applyDeployment(deployFileApp)
     rolloutPod("postgres")
-    String deployFileDB = appFile.property("deployment.application");
+    String deployFileDB = appFile.property("application");
     applyDeployment(deployFileDB)
 }

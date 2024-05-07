@@ -17,7 +17,6 @@ public class ApplicationFiles{
             if(lines[i].contains(property)){
                 deployFile = lines[i+1];
             }
-            deployFile = lines[4];
         }
         return deployFile;
 
