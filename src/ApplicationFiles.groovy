@@ -22,7 +22,7 @@ public class ApplicationFiles{
             while(line != null){
                 System.out.println("Test" + line);
                 if(line.contains(property)){
-                    String result[] = line.split("=");
+                    String[] result = line.split("=");
                     deployFile = result[1];
                 }
                 line = reader.readLine();
