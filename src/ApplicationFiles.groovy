@@ -23,6 +23,7 @@ public class ApplicationFiles{
                     String[] result = line.split("=");
                     deployFile = result[1];
                 }
+                line = reader.readLine();
             }
 
 
