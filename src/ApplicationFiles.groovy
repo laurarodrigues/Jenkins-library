@@ -13,6 +13,8 @@ public class ApplicationFiles{
        
         String deployFile;
         BufferedReader reader;
+        System.out.println("Test");
+         System.out.println(propertiesFile);
 
         try{
             reader = new BufferedReader(new FileReader(propertiesFile));
