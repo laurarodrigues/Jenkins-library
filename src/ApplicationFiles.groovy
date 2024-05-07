@@ -19,6 +19,7 @@ public class ApplicationFiles{
             String line =reader.readLine();
 
             while(line != null){
+                System.out.println(line);
                 if(line.contains(property)){
                     String[] result = line.split("=");
                     deployFile = result[1];
