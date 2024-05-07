@@ -29,7 +29,7 @@ public class ApplicationFiles{
 
 
         }catch(IOException e){
-            e.printStrackTrace();
+            e.printStackTrace();
         }
 
         return deployFile;
