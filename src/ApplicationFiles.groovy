@@ -9,7 +9,7 @@ public class ApplicationFiles{
         this.propertiesFile = propertiesFile;
     }
 
-    public String getProperty(String property){
+    public String property(String property){
        
         String deployFile;
         BufferedReader reader;
