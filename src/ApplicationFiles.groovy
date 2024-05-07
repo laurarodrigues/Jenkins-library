@@ -1,11 +1,7 @@
-import java.io.InputStream;
+def propertiesFile = libraryResource "application.properties"
 
 public class ApplicationFiles{
 
-    private Properties properties = new Properties();
-    private FileReader reader;
-    private String applicationDeploy;
-    private String databaseDeploy;
 
     public ApplicationFiles(){
     }
@@ -29,4 +25,3 @@ public class ApplicationFiles{
     
 }
 
-def propertiesFile = libraryResource "application.properties"
