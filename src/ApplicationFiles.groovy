@@ -4,21 +4,29 @@ public class ApplicationFiles{
 
     private Properties properties = new Properties();
     private FileReader reader;
-    private InputStream in;
     private String applicationDeploy;
     private String databaseDeploy;
 
     public ApplicationFiles(){
-         this.in = this.getClass().getClassLoader().getResourceAsStream("application.properties");
     }
 
-    public String getApplicationDeploy(){
-        properties.load(in);
-        return properties.getProperty("deployment.application"); 
+    public String getProperty(String property){
+        String deployFile;
+        Scanner scanner = new Scanner(propertiesFile);
+        while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                if(lines.contains(property)){
+                        String[] parts = lines.split("=");
+                        deployFile = parts[1];
+                }
+                // process the line
+        }
+        scanner.close();
+
+        return deployFile;
     }
 
-    public String getDataBaseDeploy(){
-        properties.load(in);
-        return properties.getProperty("deployment.database"); 
-    }
+    
 }
+
+def propertiesFile = libraryResource "application.properties"
