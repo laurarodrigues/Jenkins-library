@@ -1,5 +1,5 @@
 def call(String databasePod){
-    def propertiesFile = libraryResource "application.properties";
+    def propertiesFile = libraryResource "application_1.properties";
     //sh "echo Datei mit Deployments"
     sh "echo ${propertiesFile}"
     sh "echo --------"
