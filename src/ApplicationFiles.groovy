@@ -14,8 +14,9 @@ public class ApplicationFiles{
         String deployFile;
         String[] lines = propertiesFile.split(System.lineSeparator());
         for(int i = 0; i<lines.length; i++){
-            if(lines[i].contains(property)){
-                deployFile = lines[i+1];
+            String splitLine = lines[i].split('=');
+            if(splitLine[0].contains(property)){
+                deployFile = splitLine[1];
             }
         }
         return deployFile;
