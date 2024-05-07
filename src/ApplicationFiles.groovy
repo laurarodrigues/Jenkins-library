@@ -12,17 +12,13 @@ public class ApplicationFiles{
     public String property(String property){
        
         String deployFile;
-        Scanner sc = new Scanner(propertiesFile);
-        while(sc.hasNext()){
-            if(sc.next().contains(property)){
-                deployFile = sc.next();
+        String[] lines = propertiesFile.split(System.lineSeparator());
+        for(int i = 0; i<lines.length; i++){
+            if(lines[i].contains(property)){
+                deployFile = lines[i+1];
             }
         }
         return deployFile;
-
-        
-
-        
 
     }
 
